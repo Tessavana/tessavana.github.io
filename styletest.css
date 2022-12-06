@@ -55,12 +55,9 @@ body{
 }
 
 .wrapper{
-    background: #ddd;
-	margin-left: 4%;
-	margin-right: 4%;
-	margin-bottom: 40px;
+
 	padding:40px;
-    text-align: center;
+  text-align: center;
 	align-items: center;
 }
 
@@ -95,7 +92,7 @@ body{
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   opacity: 0;
   pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .wrapper .tooltip::before {
@@ -107,20 +104,20 @@ body{
   bottom: -3px;
   left: 40%; /*where the tooltip points*/
   transform: translate(-20%) rotate(45deg);
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.wrapper .chanagecolor::before {
+/* .wrapper .chanagecolor::before {
   position: absolute;
   content: "";
   height: 8px;
   width: 8px;
   background-color: #B980FE;
   bottom: -3px;
-  left: 40%; /*where the tooltip points*/
+  left: 40%; 
   transform: translate(-20%) rotate(45deg);
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
+} */
 
 .wrapper .icon:focus .tooltip {
   top: -45px;
