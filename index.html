@@ -95,9 +95,10 @@ body{
 
  
  </header>
-  
 
-<!-- Social Media Buttons HTML -->
+ <span class = "more_info">main text</span>
+
+
 <div class="wrapper">
   <a href="#" class="icon facebook"  onclick="change(this)">
     <div class="tooltip">Facebook</div>
@@ -192,13 +193,58 @@ body{
             function change(i){
                 if(i.style.backgroundColor ==""){                   
                     i.style.backgroundColor="#B980FE";
-					i.style.color="#ffffff";
+					          i.style.color="#ffffff";
                 }
                 else{                   
                     i.style.backgroundColor="";
-					i.style.color="";
+					          i.style.color="";
                 }
             }
+
+            
+$(document).ready(function () {
+
+//init pop-ups
+$(".wrapper").attr("data-close", false);
+
+//click on pop-up opener.
+//pop-up is expected to be a child of opener
+$(".tooltip").click(function () {
+    var $title = $(this).find(".wrapper");
+    //open if not marked for closing
+    if ($title.attr("data-close") === "false") {
+        $title.show();
+    }
+    //reset popup         
+    $title.attr("data-close", false);
+});
+
+//mark pop-up for closing if clicked on
+//close is initiated by document.mouseup, 
+//marker will stop opener from re-opening it
+$(".wrapper").click(function () {
+    $(this).attr("data-close",true);
+});
+
+//hide all pop-ups
+$(document).mouseup(function () {
+    $(".popup").hide();
+
+});
+
+//show on rollover if mouse is used
+$(".tooltip").mouseenter(function () {
+    var $title = $(this).find(".wrapper");
+    $title.show();
+});
+
+//hide on roll-out
+$(".tooltip").mouseleave(function () {
+    var $title = $(this).find(".wrapper");
+    $title.hide();
+});  
+
+});
         </script>
 
 	  
